@@ -5,13 +5,13 @@ export const metadata = {
   description: 'Generador e impresor de Sudokus A4',
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout(props) {
   return (
-
-
-
-
-      {children}
-
+    
+      
+        
+      
+      {props.children}
+    
   );
 }
