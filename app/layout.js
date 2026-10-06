@@ -1,8 +1,8 @@
 import React from 'react';
 
 export const metadata = {
-  title: 'Sudokus A4',
-  description: 'Generador de Sudokus para imprimir',
+  title: 'Ebook de Sudokus',
+  description: 'Generador de Sudokus para imprimir en A4',
 };
 
 export default function RootLayout({ children }) {
