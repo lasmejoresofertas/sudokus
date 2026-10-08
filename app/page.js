@@ -72,7 +72,7 @@ function generateVariations(baseBoard, count, levelName) {
   return result;
 }
 
-// 80 Sudokus totales (20 por cada nivel)
+// 80 Sudokus totales (20 por nivel)
 const allSudokus = [
   ...generateVariations(BASE_BOARDS.NOVATO, 20, 'NOVATO'),
   ...generateVariations(BASE_BOARDS.MEDIO, 20, 'MEDIO'),
@@ -167,7 +167,7 @@ export default function EbookGenerator() {
         {/* PÁGINAS DE SUDOKUS (Páginas 2 a 41) */}
         {pages.map((pair, pageIdx) => {
           const isLastPage = pageIdx === pages.length - 1;
-          const pageNumber = pageIdx + 2; // +2 por la página del Índice
+          const pageNumber = pageIdx + 2;
 
           return (
             <section
@@ -185,9 +185,11 @@ export default function EbookGenerator() {
                     </header>
 
                     <div className="flex justify-center items-center">
-                      <div className="grid grid-cols-9 border-4 border-black bg-white w-[270px] h-[270px]">
+                      <div className="grid grid-cols-9 border-2 border-black bg-white w-[270px] h-[270px] box-border">
                         {item.puzzle.map((row, rIdx) =>
                           row.map((val, cIdx) => {
+                            const isRightThin = cIdx !== 8;
+                            const isBottomThin = rIdx !== 8;
                             const isRightThick = (cIdx + 1) % 3 === 0 && cIdx !== 8;
                             const isBottomThick = (rIdx + 1) % 3 === 0 && rIdx !== 8;
 
@@ -195,9 +197,11 @@ export default function EbookGenerator() {
                               <div
                                 key={`cell-${item.id}-${rIdx}-${cIdx}`}
                                 className={`
-                                  flex items-center justify-center font-bold text-lg text-black border border-neutral-400
-                                  ${isRightThick ? 'border-r-4 border-r-black' : ''}
-                                  ${isBottomThick ? 'border-b-4 border-b-black' : ''}
+                                  flex items-center justify-center font-bold text-lg text-black bg-white box-border
+                                  ${isRightThin ? 'border-r border-r-neutral-400' : ''}
+                                  ${isBottomThin ? 'border-b border-b-neutral-400' : ''}
+                                  ${isRightThick ? '!border-r-2 !border-r-black' : ''}
+                                  ${isBottomThick ? '!border-b-2 !border-b-black' : ''}
                                 `}
                               >
                                 {val}
