@@ -2,99 +2,100 @@
 
 import React from 'react';
 
-// Temas y palabras para las Sopas de Letras
+// Temas y palabras para las Sopas de Letras en Español
 const WORD_SEARCH_DATA = [
-  // BEGINNER (Nivel 1)
-  { id: 1, title: 'ANIMALS #1', difficulty: 'BEGINNER', grid: [
-    ['D', 'O', 'G', 'X', 'C', 'A', 'T', 'M'],
-    ['L', 'I', 'O', 'N', 'B', 'E', 'A', 'R'],
-    ['F', 'I', 'S', 'H', 'B', 'I', 'R', 'D'],
-    ['D', 'U', 'C', 'K', 'F', 'R', 'O', 'G'],
-    ['P', 'I', 'G', 'Z', 'C', 'O', 'W', 'K'],
-    ['M', 'O', 'U', 'S', 'E', 'H', 'I', 'P'],
-    ['S', 'H', 'E', 'E', 'P', 'A', 'N', 'T'],
-    ['W', 'O', 'L', 'F', 'G', 'O', 'A', 'T'],
-  ], words: ['DOG', 'CAT', 'LION', 'BEAR', 'FISH', 'BIRD', 'FROG', 'COW'] },
-  { id: 2, title: 'FRUITS #1', difficulty: 'BEGINNER', grid: [
-    ['A', 'P', 'P', 'L', 'E', 'L', 'E', 'M'],
-    ['B', 'A', 'N', 'A', 'N', 'A', 'M', 'E'],
-    ['G', 'R', 'A', 'P', 'E', 'L', 'O', 'N'],
-    ['L', 'E', 'M', 'O', 'N', 'P', 'E', 'A'],
-    ['P', 'E', 'A', 'C', 'H', 'L', 'U', 'M'],
-    ['K', 'I', 'W', 'I', 'M', 'A', 'N', 'G'],
-    ['P', 'L', 'U', 'M', 'B', 'E', 'R', 'R'],
-    ['O', 'R', 'A', 'N', 'G', 'E', 'Y', 'S'],
-  ], words: ['APPLE', 'BANANA', 'GRAPE', 'LEMON', 'PEACH', 'KIWI', 'PLUM', 'ORANGE'] },
+  // NOVATO (Nivel 1)
+  { id: 1, title: 'ANIMALES #1', difficulty: 'NOVATO', grid: [
+    ['P', 'E', 'R', 'R', 'O', 'G', 'A', 'T'],
+    ['L', 'E', 'O', 'N', 'O', 'S', 'O', 'O'],
+    ['P', 'E', 'Z', 'P', 'A', 'J', 'A', 'R'],
+    ['P', 'A', 'T', 'O', 'R', 'A', 'N', 'A'],
+    ['C', 'E', 'R', 'D', 'O', 'V', 'A', 'C'],
+    ['R', 'A', 'T', 'O', 'N', 'I', 'P', 'O'],
+    ['O me', 'V', 'E', 'J', 'A', 'T', 'O', 'R'],
+    ['L', 'O', 'B', 'O', 'C', 'A me', 'B', 'R'],
+  ], words: ['PERRO', 'GATO', 'LEON', 'OSO', 'PEZ', 'PAJARO', 'PATO', 'RANA'] },
+  { id: 2, title: 'FRUTAS #1', difficulty: 'NOVATO', grid: [
+    ['M', 'A', 'N', 'Z', 'A', 'N', 'A', 'L'],
+    ['B', me', 'A', 'N', 'A', 'N', 'A', 'I'],
+    ['U', 'V', 'A', 'S', 'L', 'I', 'M', 'O'],
+    ['L', 'I', 'M', 'O', 'N', 'P', 'E', 'R'],
+    ['D', 'U', 'R', 'A', 'Z', 'N', 'O', 'A'],
+    ['K', 'I', 'W', 'I', 'M', 'A', me', 'N'],
+    ['C', 'I', 'R', 'U', 'E', 'L', 'A', 'G'],
+    ['N', 'A', 'R', 'A', 'N', 'J', 'A', 'O'],
+  ], words: ['MANZANA', 'BANANA', 'UVAS', 'LIMON', 'PERA', 'KIWI', 'CIRUELA', 'NARANJA'] },
 
-  // MEDIUM (Nivel 2)
-  { id: 3, title: 'COUNTRIES #1', difficulty: 'MEDIUM', grid: [
+  // MEDIO (Nivel 2)
+  { id: 3, title: 'PAÍSES #1', difficulty: 'MEDIO', grid: [
     ['C', 'A', 'N', 'A', 'D', 'A', 'M', 'E'],
-    ['B', 'R', 'A', 'Z', 'I', 'L', 'X', 'I'],
-    ['F', 'R', 'A', 'N', 'C', 'E', 'Y', 'C'],
-    ['J', 'A', 'P', 'A', 'N', 'U', 'K', 'O'],
-    ['S', 'P', 'A', 'I', 'N', 'I', 'T', 'A'],
-    ['M', 'E', 'X', 'I', 'C', 'O', 'G', 'E'],
-    ['E', 'G', 'Y', 'P', 'T', 'C', 'H', 'I'],
+    ['B', 'R', 'A', 'S', 'I', 'L', 'X', 'X'],
+    ['F', 'R', 'A', 'N', 'C', 'I', 'A', 'I'],
+    ['J', 'A', 'P', 'O', 'N', 'P', 'E', 'C'],
+    ['E', 'S', 'P', 'A', 'Ñ', 'A', 'R', 'O'],
+    ['M', 'E', 'X', 'I', 'C', 'O', 'U', 'G'],
+    ['E', 'G', 'I', 'P', 'T', 'O', 'C', 'E'],
     ['P', 'E', 'R', 'U', 'I', 'N', 'D', 'I'],
-  ], words: ['CANADA', 'BRAZIL', 'FRANCE', 'JAPAN', 'SPAIN', 'MEXICO', 'EGYPT', 'PERU'] },
-  { id: 4, title: 'SPORTS #1', difficulty: 'MEDIUM', grid: [
-    ['S', 'O', 'C', 'C', 'E', 'R', 'T', 'E'],
-    ['T', 'E', 'N', 'N', 'I', 'S', 'B', 'A'],
-    ['G', 'O', 'L', 'F', 'S', 'K', 'I', 'I'],
-    ['S', 'W', 'I', 'M', 'M', 'I', 'N', 'G'],
-    ['B', 'O', 'X', 'I', 'N', 'G', 'R', 'U'],
-    ['R', 'U', 'G', 'B', 'Y', 'J', 'U', 'D'],
-    ['C', 'Y', 'C', 'L', 'I', 'N', 'G', 'O'],
-    ['S', 'K', 'A', 'T', 'I', 'N', 'G', 'X'],
-  ], words: ['SOCCER', 'TENNIS', 'GOLF', 'SWIMMING', 'BOXING', 'RUGBY', 'CYCLING', 'SKATING'] },
+  ], words: ['CANADA', 'BRASIL', 'FRANCIA', 'JAPON', 'ESPAÑA', 'MEXICO', 'EGIPTO', 'PERU'] },
+  { id: 4, title: 'DEPORTES #1', difficulty: 'MEDIO', grid: [
+    ['F', 'U', 'T', 'B', 'O', 'L', 'T', 'E'],
+    ['T', 'E', 'N', 'I', 'S', 'B', 'A', 'S'],
+    ['G', 'O', 'L', 'F', 'S', 'K', 'I', 'Q'],
+    ['N', 'A', 'T', 'A', 'C', 'I', 'O', 'N'],
+    ['B', 'O', 'X', 'E', 'O', 'R', 'U', 'G'],
+    ['R', 'U me', 'G', 'B', 'Y', 'J', 'U', 'D'],
+    ['C', 'I', 'C', 'L', 'I', 'S', 'M', 'O'],
+    ['P', 'A', 'T', 'I', me', 'N', me', 'A', 'J'],
+  ], words: ['FUTBOL', 'TENIS', 'GOLF', 'NATACION', 'BOXEO', 'RUGBY', 'CICLISMO', 'PATINAJE'] },
 
-  // HARD (Nivel 3)
-  { id: 5, title: 'SPACE #1', difficulty: 'HARD', grid: [
-    ['P', 'L', 'A', 'N', 'E', 'T', 'S', 'U'],
-    ['G', 'A', 'L', 'A', 'X', 'Y', 'C', 'O'],
-    ['C', 'O', 'S', 'M', 'O', 'S', 'O', 'R'],
-    ['R', 'O', 'C', 'K', 'E', 'T', 'M', 'B'],
+  // ALTO (Nivel 3)
+  { id: 5, title: 'UNIVERSO #1', difficulty: 'ALTO', grid: [
+    ['P', 'L', 'A', 'N', 'E', 'T', 'A', 'S'],
+    ['G', 'A', 'L', 'A', 'X', 'I', 'A', 'O'],
+    ['C', 'O', 'S', 'M', 'O', 'S', 'O', 'L'],
+    ['C', 'O me', 'M', 'E', 'T', 'A', 'M', 'O'],
     ['A', 'S', 'T', 'E', 'R', 'O', 'I', 'D'],
-    ['N', 'E', 'B', 'U', 'L', 'A', 'T', 'O'],
-    ['S', 'T', 'A', 'R', 'S', 'U', 'N', 'S'],
-    ['C', 'O', 'M', 'E', 'T', 'M', 'O', 'O'],
-  ], words: ['PLANETS', 'GALAXY', 'COSMOS', 'ROCKET', 'ASTEROID', 'NEBULA', 'STARS', 'COMET'] },
-  { id: 6, title: 'OCEAN #1', difficulty: 'HARD', grid: [
-    ['S', 'H', 'A', 'R', 'K', 'W', 'H', 'A'],
-    ['D', 'O', 'L', 'P', 'H', 'I', 'N', 'L'],
-    ['C', 'O', 'R', 'A', 'L', 'R', 'E', 'E'],
-    ['T', 'U', 'R', 'T', 'L', 'E', 'F', 'S'],
-    ['O', 'C', 'T', 'O', 'P', 'U', 'S', 'I'],
-    ['W', 'A', 'V', 'E', 'S', 'F', 'I', 'S'],
-    ['I', 'S', 'L', 'A', 'N', 'D', 'B', 'E'],
-    ['S', 'E', 'A', 'W', 'E', 'E', 'D', 'C'],
-  ], words: ['SHARK', 'DOLPHIN', 'CORAL', 'TURTLE', 'OCTOPUS', 'WAVES', 'ISLAND', 'SEAWEED'] },
+    ['N', 'E', 'B', 'U', 'L', 'O', 'S', 'A'],
+    ['E', 'S', 'T', 'R', 'E', 'L', 'L', 'A'],
+    ['C', 'O', me', 'T', 'E', 'M', 'O', 'N'],
+  ], words: ['PLANETAS', 'GALAXIA', 'COSMOS', 'COMETA', 'ASTEROIDE', 'NEBULOSA', 'ESTRELLA', 'COHETE'] },
+  { id: 6, title: 'OCÉANO #1', difficulty: 'ALTO', grid: [
+    ['T', 'I', 'B', 'U', 'R', 'O', 'N', 'W'],
+    ['D', 'E', 'L', 'F', 'I', 'N', 'N', 'L'],
+    ['C', 'O', 'R', 'A', 'L', 'R', 'E', 'F'],
+    ['T', 'O', 'R', 'T', 'U', 'G', 'A', 'S'],
+    ['P', 'U', 'L', 'P', 'O', 'W', 'A', 'V'],
+    ['O', 'L', 'A', 'S', 'P', 'E me', 'C me', 'E'],
+    ['I me', 'S', 'L', 'A', 'A', 'L', 'G', 'A'],
+    ['M', 'A', 'R', 'E', 'A', 'C', 'O', 'S'],
+  ], words: ['TIBURON', 'DELFIN', 'CORAL', 'TORTUGA', 'PULPO', 'OLAS', 'ALGA', 'MAREA'] },
 
-  // EXPERT (Nivel 4)
-  { id: 7, title: 'SCIENCE #1', difficulty: 'EXPERT', grid: [
-    ['A', 'T', 'O', 'M', 'P', 'H', 'Y', 'S'],
-    ['E', 'N', 'E', 'R', 'G', 'Y', 'L', 'I'],
+  // EXPERTO (Nivel 4)
+  { id: 7, title: 'CIENCIA #1', difficulty: 'EXPERTO', grid: [
+    ['A', 'T', 'O', 'M', 'O', 'F', 'I', 'S'],
+    ['E', 'N', 'E', 'R', 'G', I', 'A', 'L'],
     ['L', 'A', 'B', 'O', 'R', 'A', 'T', 'O'],
-    ['P', 'R', 'O', 'T', 'O', 'N', 'S', 'P'],
-    ['G', 'E', 'N', 'E', 'T', 'I', 'C', 'S'],
-    ['M', 'A', 'T', 'T', 'E', 'R', 'Q', 'U'],
-    ['F', 'O', 'R', 'C', 'E', 'C', 'E', 'L'],
-    ['T', 'H', 'E', 'O', 'R', 'Y', 'B', 'I'],
-  ], words: ['ATOM', 'ENERGY', 'PROTONS', 'GENETICS', 'MATTER', 'FORCE', 'THEORY', 'PHYSICS'] },
-  { id: 8, title: 'TECHNOLOGY #1', difficulty: 'EXPERT', grid: [
-    ['R', 'O', 'B', 'O', 'T', 'I', 'C', 'S'],
-    ['C', 'O', 'D', 'I', 'N', 'G', 'S', 'Y'],
-    ['A', 'I', 'L', 'O', 'G', 'I', 'C', 'S'],
-    ['S', 'E', 'R', 'V', 'E', 'R', 'S', 'T'],
-    ['D', 'A', 'T', 'A', 'B', 'A', 'S', 'E'],
-    ['M', 'O', 'B', 'I', 'L', 'E', 'W', 'E'],
-    ['N', 'E', 'T', 'W', 'O', 'R', 'K', 'B'],
+    ['P', 'R', 'O', 'T', 'O', 'N', 'E', 'S'],
+    ['G', 'E', 'N', 'E', 'T', 'I', 'C', 'A'],
+    ['M', 'A', 'T', 'E', 'R', 'I', 'A', 'U'],
+    ['F', 'U', 'E', 'R', 'Z', 'A', 'C', 'E'],
+    ['T', 'E', 'O', 'R', 'I', 'A', 'B', 'I'],
+  ], words: ['ATOMO', 'ENERGIA', 'PROTONES', 'GENETICA', 'MATERIA', 'FUERZA', 'TEORIA', 'FISICA'] },
+  { id: 8, title: 'TECNOLOGÍA #1', difficulty: 'EXPERTO', grid: [
+    ['R', 'O', 'B', 'O', 'T', 'I', 'C', 'A'],
+    ['C', 'O', 'D me', 'I', 'G', 'O', 'S', 'Y'],
+    ['L', 'O', 'G', 'I', 'C', 'A', 'C', 'S'],
+    ['S', 'E', 'R', 'V', 'I', 'D', 'O', 'R'],
+    ['B', 'A', 'S', 'E', 'D', 'A', 'T', 'O'],
+    ['M', 'O', 'V', 'I', 'L', 'E', 'W', 'E'],
+    ['R', 'E', 'D', 'E', 'S', 'R', 'K', 'B'],
     ['P', 'Y', 'T', 'H', 'O', 'N', 'C', 'P'],
-  ], words: ['ROBOTICS', 'CODING', 'SERVERS', 'DATABASE', 'MOBILE', 'NETWORK', 'PYTHON', 'LOGIC'] },
+  ], words: ['ROBOTICA', 'CODIGO', 'LOGICA', 'SERVIDOR', 'BASEDATO', 'MOVIL', 'REDES', 'PYTHON'] },
 ];
 
+// Generador de 80 sopas de letras repartidas en los 4 niveles
 function generateAllWordSearches() {
-  const levels = ['BEGINNER', 'MEDIUM', 'HARD', 'EXPERT'];
+  const levels = ['NOVATO', 'MEDIO', 'ALTO', 'EXPERTO'];
   const fullList = [];
 
   levels.forEach((lvl) => {
@@ -115,6 +116,7 @@ function generateAllWordSearches() {
 
 const allPuzzles = generateAllWordSearches();
 
+// Agrupar de a 2 por carilla A4
 function chunkArray(array, size) {
   const result = [];
   for (let i = 0; i < array.length; i += size) {
@@ -132,72 +134,73 @@ export default function WordSearchEbook() {
 
   return (
     <div className="min-h-screen bg-neutral-800 text-neutral-100 flex flex-col items-center p-4 print:p-0 print:bg-white print:text-black">
+      {/* Botón superior (Oculto al imprimir) */}
       <header className="no-print w-full max-w-xl bg-neutral-900 border border-neutral-700 rounded-xl p-4 mb-6 shadow-2xl flex items-center justify-between">
         <div>
-          <h1 className="text-lg font-bold text-white">🔤 Word Search Book (English Edition)</h1>
-          <p className="text-xs text-neutral-400">41 Total Pages (Table of Contents + 40 Puzzle Pages)</p>
+          <h1 className="text-lg font-bold text-white">🔤 Libro de Sopas de Letras</h1>
+          <p className="text-xs text-neutral-400">41 Páginas totales (Índice + 40 Páginas de juegos)</p>
         </div>
         <button
           onClick={handlePrint}
           className="bg-emerald-600 hover:bg-emerald-500 text-white font-semibold px-4 py-2 rounded-lg text-sm cursor-pointer"
         >
-          📥 Download PDF
+          📥 Descargar PDF
         </button>
       </header>
 
       <main className="flex flex-col items-center">
-        {/* PÁGINA 1: TABLE OF CONTENTS */}
+        {/* PÁGINA 1: ÍNDICE DE CONTENIDOS */}
         <section className="a4-page page-break flex flex-col justify-between p-12 border border-neutral-300 bg-white text-black shadow-2xl print:shadow-none print:border-0 mb-8 print:mb-0">
           <div>
             <header className="border-b-4 border-black pb-4 mb-10 text-center">
-              <h1 className="text-4xl font-black uppercase tracking-wider">TABLE OF CONTENTS</h1>
+              <h1 className="text-4xl font-black uppercase tracking-wider">ÍNDICE</h1>
               <p className="text-sm font-bold text-neutral-600 mt-1">
-                WORD SEARCH PUZZLE GUIDE & LEVELS
+                GUÍA DE SOPAS DE LETRAS Y NIVELES
               </p>
             </header>
 
             <div className="space-y-6 my-12 px-4">
               <div className="flex justify-between items-baseline border-b-2 border-dotted border-black pb-2">
                 <div>
-                  <span className="text-xl font-black uppercase">Level 1: BEGINNER</span>
-                  <p className="text-xs text-neutral-600 font-medium">Word Searches #1 to #20 ( Easy thematic grids )</p>
+                  <span className="text-xl font-black uppercase">Nivel 1: NOVATO</span>
+                  <p className="text-xs text-neutral-600 font-medium">Sopas de Letras del #1 al #20 ( Temas fáciles y directos )</p>
                 </div>
-                <span className="text-lg font-black">Pages 2 - 11</span>
+                <span className="text-lg font-black">Págs. 2 - 11</span>
               </div>
 
               <div className="flex justify-between items-baseline border-b-2 border-dotted border-black pb-2">
                 <div>
-                  <span className="text-xl font-black uppercase">Level 2: MEDIUM</span>
-                  <p className="text-xs text-neutral-600 font-medium">Word Searches #1 to #20 ( Moderate word length )</p>
+                  <span className="text-xl font-black uppercase">Nivel 2: MEDIO</span>
+                  <p className="text-xs text-neutral-600 font-medium">Sopas de Letras del #1 al #20 ( Palabras de longitud media )</p>
                 </div>
-                <span className="text-lg font-black">Pages 12 - 21</span>
+                <span className="text-lg font-black">Págs. 12 - 21</span>
               </div>
 
               <div className="flex justify-between items-baseline border-b-2 border-dotted border-black pb-2">
                 <div>
-                  <span className="text-xl font-black uppercase">Level 3: HARD</span>
-                  <p className="text-xs text-neutral-600 font-medium">Word Searches #1 to #20 ( Challenging topics )</p>
+                  <span className="text-xl font-black uppercase">Nivel 3: ALTO</span>
+                  <p className="text-xs text-neutral-600 font-medium">Sopas de Letras del #1 al #20 ( Desafío temático )</p>
                 </div>
-                <span className="text-lg font-black">Pages 22 - 31</span>
+                <span className="text-lg font-black">Págs. 22 - 31</span>
               </div>
 
               <div className="flex justify-between items-baseline border-b-2 border-dotted border-black pb-2">
                 <div>
-                  <span className="text-xl font-black uppercase">Level 4: EXPERT</span>
-                  <p className="text-xs text-neutral-600 font-medium">Word Searches #1 to #20 ( Advanced vocabulary )</p>
+                  <span className="text-xl font-black uppercase">Nivel 4: EXPERTO</span>
+                  <p className="text-xs text-neutral-600 font-medium">Sopas de Letras del #1 al #20 ( Vocabulario avanzado )</p>
                 </div>
-                <span className="text-lg font-black">Pages 32 - 41</span>
+                <span className="text-lg font-black">Págs. 32 - 41</span>
               </div>
             </div>
           </div>
 
           <footer className="border-t border-black pt-3 flex justify-between text-xs font-bold uppercase">
-            <span>Ultimate Word Search • 80 Puzzles</span>
-            <span>Page 1</span>
+            <span>Gran Colección de Sopas de Letras • 80 Desafíos</span>
+            <span>Página 1</span>
           </footer>
         </section>
 
-        {/* PÁGINAS DE SOPAS DE LETRAS */}
+        {/* PÁGINAS DE SOPAS DE LETRAS (2 POR HOJA A4) */}
         {pages.map((pair, pageIdx) => {
           const isLastPage = pageIdx === pages.length - 1;
           const pageNumber = pageIdx + 2;
@@ -213,11 +216,12 @@ export default function WordSearchEbook() {
                     <header className="border-b-2 border-black pb-1 mb-3 flex justify-between items-end">
                       <h2 className="text-xl font-black uppercase">{item.title}</h2>
                       <span className="text-[10px] font-black border border-black px-2 py-0.5 rounded uppercase">
-                        LEVEL: {item.difficulty}
+                        NIVEL: {item.difficulty}
                       </span>
                     </header>
 
                     <div className="flex flex-col items-center">
+                      {/* Grilla de letras */}
                       <div className="grid grid-cols-8 gap-1 bg-white p-2 border-2 border-black mb-3">
                         {item.grid.map((row, rIdx) =>
                           row.map((letter, cIdx) => (
@@ -231,9 +235,10 @@ export default function WordSearchEbook() {
                         )}
                       </div>
 
+                      {/* Lista de Palabras */}
                       <div className="w-full max-w-xs border-t border-dotted border-black pt-2">
                         <p className="text-[10px] font-black uppercase tracking-wider text-center mb-1">
-                          FIND THE WORDS:
+                          ENCUENTRA LAS PALABRAS:
                         </p>
                         <div className="grid grid-cols-4 gap-x-2 gap-y-0.5 text-center">
                           {item.words.map((word, wIdx) => (
@@ -249,14 +254,15 @@ export default function WordSearchEbook() {
               </div>
 
               <footer className="border-t border-black pt-2 flex justify-between text-[11px] font-bold uppercase">
-                <span>Word Search Collection</span>
-                <span>Page {pageNumber}</span>
+                <span>Colección Sopa de Letras</span>
+                <span>Página {pageNumber}</span>
               </footer>
             </section>
           );
         })}
       </main>
 
+      {/* Estilos CSS para A4 */}
       <style jsx global>{`
         @page {
           size: A4 portrait;
