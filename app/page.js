@@ -12,16 +12,16 @@ const WORD_SEARCH_DATA = [
     ['P', 'A', 'T', 'O', 'R', 'A', 'N', 'A'],
     ['C', 'E', 'R', 'D', 'O', 'V', 'A', 'C'],
     ['R', 'A', 'T', 'O', 'N', 'I', 'P', 'O'],
-    ['O me', 'V', 'E', 'J', 'A', 'T', 'O', 'R'],
-    ['L', 'O', 'B', 'O', 'C', 'A me', 'B', 'R'],
+    ['O', 'V', 'E', 'J', 'A', 'T', 'O', 'R'],
+    ['L', 'O', 'B', 'O', 'C', 'A', 'B', 'R'],
   ], words: ['PERRO', 'GATO', 'LEON', 'OSO', 'PEZ', 'PAJARO', 'PATO', 'RANA'] },
   { id: 2, title: 'FRUTAS #1', difficulty: 'NOVATO', grid: [
     ['M', 'A', 'N', 'Z', 'A', 'N', 'A', 'L'],
-    ['B', me', 'A', 'N', 'A', 'N', 'A', 'I'],
+    ['B', 'A', 'N', 'A', 'N', 'A', 'M', 'I'],
     ['U', 'V', 'A', 'S', 'L', 'I', 'M', 'O'],
     ['L', 'I', 'M', 'O', 'N', 'P', 'E', 'R'],
     ['D', 'U', 'R', 'A', 'Z', 'N', 'O', 'A'],
-    ['K', 'I', 'W', 'I', 'M', 'A', me', 'N'],
+    ['K', 'I', 'W', 'I', 'M', 'A', 'N', 'N'],
     ['C', 'I', 'R', 'U', 'E', 'L', 'A', 'G'],
     ['N', 'A', 'R', 'A', 'N', 'J', 'A', 'O'],
   ], words: ['MANZANA', 'BANANA', 'UVAS', 'LIMON', 'PERA', 'KIWI', 'CIRUELA', 'NARANJA'] },
@@ -43,9 +43,9 @@ const WORD_SEARCH_DATA = [
     ['G', 'O', 'L', 'F', 'S', 'K', 'I', 'Q'],
     ['N', 'A', 'T', 'A', 'C', 'I', 'O', 'N'],
     ['B', 'O', 'X', 'E', 'O', 'R', 'U', 'G'],
-    ['R', 'U me', 'G', 'B', 'Y', 'J', 'U', 'D'],
+    ['R', 'U', 'G', 'B', 'Y', 'J', 'U', 'D'],
     ['C', 'I', 'C', 'L', 'I', 'S', 'M', 'O'],
-    ['P', 'A', 'T', 'I', me', 'N', me', 'A', 'J'],
+    ['P', 'A', 'T', 'I', 'N', 'A', 'J', 'E'],
   ], words: ['FUTBOL', 'TENIS', 'GOLF', 'NATACION', 'BOXEO', 'RUGBY', 'CICLISMO', 'PATINAJE'] },
 
   // ALTO (Nivel 3)
@@ -53,11 +53,11 @@ const WORD_SEARCH_DATA = [
     ['P', 'L', 'A', 'N', 'E', 'T', 'A', 'S'],
     ['G', 'A', 'L', 'A', 'X', 'I', 'A', 'O'],
     ['C', 'O', 'S', 'M', 'O', 'S', 'O', 'L'],
-    ['C', 'O me', 'M', 'E', 'T', 'A', 'M', 'O'],
+    ['C', 'O', 'M', 'E', 'T', 'A', 'M', 'O'],
     ['A', 'S', 'T', 'E', 'R', 'O', 'I', 'D'],
     ['N', 'E', 'B', 'U', 'L', 'O', 'S', 'A'],
     ['E', 'S', 'T', 'R', 'E', 'L', 'L', 'A'],
-    ['C', 'O', me', 'T', 'E', 'M', 'O', 'N'],
+    ['C', 'O', 'H', 'E', 'T', 'E', 'O', 'N'],
   ], words: ['PLANETAS', 'GALAXIA', 'COSMOS', 'COMETA', 'ASTEROIDE', 'NEBULOSA', 'ESTRELLA', 'COHETE'] },
   { id: 6, title: 'OCÉANO #1', difficulty: 'ALTO', grid: [
     ['T', 'I', 'B', 'U', 'R', 'O', 'N', 'W'],
@@ -65,15 +65,15 @@ const WORD_SEARCH_DATA = [
     ['C', 'O', 'R', 'A', 'L', 'R', 'E', 'F'],
     ['T', 'O', 'R', 'T', 'U', 'G', 'A', 'S'],
     ['P', 'U', 'L', 'P', 'O', 'W', 'A', 'V'],
-    ['O', 'L', 'A', 'S', 'P', 'E me', 'C me', 'E'],
-    ['I me', 'S', 'L', 'A', 'A', 'L', 'G', 'A'],
+    ['O', 'L', 'A', 'S', 'P', 'E', 'C', 'E'],
+    ['I', 'S', 'L', 'A', 'A', 'L', 'G', 'A'],
     ['M', 'A', 'R', 'E', 'A', 'C', 'O', 'S'],
   ], words: ['TIBURON', 'DELFIN', 'CORAL', 'TORTUGA', 'PULPO', 'OLAS', 'ALGA', 'MAREA'] },
 
   // EXPERTO (Nivel 4)
   { id: 7, title: 'CIENCIA #1', difficulty: 'EXPERTO', grid: [
     ['A', 'T', 'O', 'M', 'O', 'F', 'I', 'S'],
-    ['E', 'N', 'E', 'R', 'G', I', 'A', 'L'],
+    ['E', 'N', 'E', 'R', 'G', 'I', 'A', 'L'],
     ['L', 'A', 'B', 'O', 'R', 'A', 'T', 'O'],
     ['P', 'R', 'O', 'T', 'O', 'N', 'E', 'S'],
     ['G', 'E', 'N', 'E', 'T', 'I', 'C', 'A'],
@@ -83,7 +83,7 @@ const WORD_SEARCH_DATA = [
   ], words: ['ATOMO', 'ENERGIA', 'PROTONES', 'GENETICA', 'MATERIA', 'FUERZA', 'TEORIA', 'FISICA'] },
   { id: 8, title: 'TECNOLOGÍA #1', difficulty: 'EXPERTO', grid: [
     ['R', 'O', 'B', 'O', 'T', 'I', 'C', 'A'],
-    ['C', 'O', 'D me', 'I', 'G', 'O', 'S', 'Y'],
+    ['C', 'O', 'D', 'I', 'G', 'O', 'S', 'Y'],
     ['L', 'O', 'G', 'I', 'C', 'A', 'C', 'S'],
     ['S', 'E', 'R', 'V', 'I', 'D', 'O', 'R'],
     ['B', 'A', 'S', 'E', 'D', 'A', 'T', 'O'],
@@ -93,7 +93,6 @@ const WORD_SEARCH_DATA = [
   ], words: ['ROBOTICA', 'CODIGO', 'LOGICA', 'SERVIDOR', 'BASEDATO', 'MOVIL', 'REDES', 'PYTHON'] },
 ];
 
-// Generador de 80 sopas de letras repartidas en los 4 niveles
 function generateAllWordSearches() {
   const levels = ['NOVATO', 'MEDIO', 'ALTO', 'EXPERTO'];
   const fullList = [];
@@ -116,7 +115,6 @@ function generateAllWordSearches() {
 
 const allPuzzles = generateAllWordSearches();
 
-// Agrupar de a 2 por carilla A4
 function chunkArray(array, size) {
   const result = [];
   for (let i = 0; i < array.length; i += size) {
@@ -134,7 +132,6 @@ export default function WordSearchEbook() {
 
   return (
     <div className="min-h-screen bg-neutral-800 text-neutral-100 flex flex-col items-center p-4 print:p-0 print:bg-white print:text-black">
-      {/* Botón superior (Oculto al imprimir) */}
       <header className="no-print w-full max-w-xl bg-neutral-900 border border-neutral-700 rounded-xl p-4 mb-6 shadow-2xl flex items-center justify-between">
         <div>
           <h1 className="text-lg font-bold text-white">🔤 Libro de Sopas de Letras</h1>
@@ -221,7 +218,6 @@ export default function WordSearchEbook() {
                     </header>
 
                     <div className="flex flex-col items-center">
-                      {/* Grilla de letras */}
                       <div className="grid grid-cols-8 gap-1 bg-white p-2 border-2 border-black mb-3">
                         {item.grid.map((row, rIdx) =>
                           row.map((letter, cIdx) => (
@@ -235,7 +231,6 @@ export default function WordSearchEbook() {
                         )}
                       </div>
 
-                      {/* Lista de Palabras */}
                       <div className="w-full max-w-xs border-t border-dotted border-black pt-2">
                         <p className="text-[10px] font-black uppercase tracking-wider text-center mb-1">
                           ENCUENTRA LAS PALABRAS:
@@ -262,7 +257,6 @@ export default function WordSearchEbook() {
         })}
       </main>
 
-      {/* Estilos CSS para A4 */}
       <style jsx global>{`
         @page {
           size: A4 portrait;
