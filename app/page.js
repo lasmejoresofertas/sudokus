@@ -2,10 +2,10 @@
 
 import React from 'react';
 
-// Generador de Mandalas vectoriales en SVG
+// SVG Mandala Pattern Generator
 const MANDALA_PATTERNS = [
   // 1. FLORAL
-  { id: 'm-1', category: 'FLORAL', title: 'MANDALA FLOR DE LOTO', svg: (
+  { id: 'm-1', category: 'FLORAL', title: 'LOTUS FLOWER MANDALA', svg: (
     <svg viewBox="0 0 200 200" className="w-full h-full stroke-black fill-none stroke-[1.5]">
       <circle cx="100" cy="100" r="90" />
       <circle cx="100" cy="100" r="70" />
@@ -22,8 +22,8 @@ const MANDALA_PATTERNS = [
     </svg>
   )},
 
-  // 2. GEOMÉTRICO
-  { id: 'm-2', category: 'GEOMÉTRICO', title: 'MANDALA GEOMETRÍA SAGRADA', svg: (
+  // 2. GEOMETRIC
+  { id: 'm-2', category: 'GEOMETRIC', title: 'SACRED GEOMETRY MANDALA', svg: (
     <svg viewBox="0 0 200 200" className="w-full h-full stroke-black fill-none stroke-[1.5]">
       <circle cx="100" cy="100" r="88" />
       <circle cx="100" cy="100" r="60" />
@@ -38,8 +38,8 @@ const MANDALA_PATTERNS = [
     </svg>
   )},
 
-  // 3. CÓSMICO
-  { id: 'm-3', category: 'UNIVERSO', title: 'MANDALA SOL Y ESTRELLAS', svg: (
+  // 3. COSMIC
+  { id: 'm-3', category: 'UNIVERSE', title: 'SUN AND STARS MANDALA', svg: (
     <svg viewBox="0 0 200 200" className="w-full h-full stroke-black fill-none stroke-[1.5]">
       <circle cx="100" cy="100" r="85" />
       <circle cx="100" cy="100" r="40" />
@@ -52,8 +52,8 @@ const MANDALA_PATTERNS = [
     </svg>
   )},
 
-  // 4. ÉTNICO
-  { id: 'm-4', category: 'ÉTNICO', title: 'MANDALA TRIBAL ATRAPASUEÑOS', svg: (
+  // 4. ETHNIC
+  { id: 'm-4', category: 'ETHNIC', title: 'TRIBAL DREAMCATCHER MANDALA', svg: (
     <svg viewBox="0 0 200 200" className="w-full h-full stroke-black fill-none stroke-[1.5]">
       <circle cx="100" cy="100" r="90" strokeWidth="3" />
       <circle cx="100" cy="100" r="82" />
@@ -68,11 +68,11 @@ const MANDALA_PATTERNS = [
   )}
 ];
 
-// Generador para formar las 80 páginas completas distribuidas en 10 categorías
+// Generate 80 pages distributed in 10 categories
 function generate80Mandalas() {
   const categories = [
-    'FLORALES', 'GEOMÉTRICOS', 'UNIVERSO Y SOL', 'ÉTNICOS Y TRIBALES',
-    'ESPIRITUALES', 'NATURALEZA', 'ARMONÍA', 'MEDITACIÓN', 'CRISTALES', 'ZODÍACO'
+    'FLORAL', 'GEOMETRIC', 'SUN & STARS', 'TRIBAL & ETHNIC',
+    'SPIRITUAL', 'NATURE', 'HARMONY', 'MEDITATION', 'CRYSTALS', 'ZODIAC'
   ];
 
   const list = [];
@@ -83,9 +83,9 @@ function generate80Mandalas() {
       const base = MANDALA_PATTERNS[(totalCount - 1) % MANDALA_PATTERNS.length];
       list.push({
         id: `mandala-${totalCount}`,
-        pageNumber: totalCount + 1, // +1 por la página del Índice
+        pageNumber: totalCount + 1, // +1 for Table of Contents
         category: cat,
-        title: `MANDALA ${cat} #${i}`,
+        title: `${cat} MANDALA #${i}`,
         svg: base.svg,
       });
       totalCount++;
@@ -104,43 +104,43 @@ export default function MandalaBook() {
 
   return (
     <div className="min-h-screen bg-neutral-800 text-neutral-100 flex flex-col items-center p-4 print:p-0 print:bg-white print:text-black">
-      {/* Botón superior (Oculto al imprimir) */}
+      {/* Top Header Bar */}
       <header className="no-print w-full max-w-xl bg-neutral-900 border border-neutral-700 rounded-xl p-4 mb-6 shadow-2xl flex items-center justify-between">
         <div>
-          <h1 className="text-lg font-bold text-white">🧘 Libro de Mandalas para Colorear</h1>
-          <p className="text-xs text-neutral-400">81 Páginas Totales (Índice + 80 Mandalas Grandes)</p>
+          <h1 className="text-lg font-bold text-white">🧘 Mandala Coloring Book (English Edition)</h1>
+          <p className="text-xs text-neutral-400">81 Total Pages (Table of Contents + 80 Mandalas)</p>
         </div>
         <button
           onClick={handlePrint}
           className="bg-emerald-600 hover:bg-emerald-500 text-white font-semibold px-4 py-2 rounded-lg text-sm cursor-pointer"
         >
-          📥 Descargar PDF
+          📥 Download PDF
         </button>
       </header>
 
       <main className="flex flex-col items-center">
-        {/* PÁGINA 1: ÍNDICE DE CONTENIDOS */}
+        {/* PAGE 1: TABLE OF CONTENTS */}
         <section className="a4-page page-break flex flex-col justify-between p-12 border border-neutral-300 bg-white text-black shadow-2xl print:shadow-none print:border-0 mb-8 print:mb-0">
           <div>
             <header className="border-b-4 border-black pb-4 mb-8 text-center">
-              <h1 className="text-4xl font-black uppercase tracking-wider">ÍNDICE DE MANDALAS</h1>
+              <h1 className="text-4xl font-black uppercase tracking-wider">TABLE OF CONTENTS</h1>
               <p className="text-sm font-bold text-neutral-600 mt-1">
-                80 DESAFÍOS DE MEDITACIÓN Y COLOR
+                80 RELAXING & MEDITATIVE DESIGNS
               </p>
             </header>
 
             <div className="grid grid-cols-2 gap-4 my-6 px-2">
               {[
-                { cat: '1. MANDALAS FLORALES', range: 'Págs. 2 - 9' },
-                { cat: '2. GEOMÉTRICOS', range: 'Págs. 10 - 17' },
-                { cat: '3. UNIVERSO Y SOL', range: 'Págs. 18 - 25' },
-                { cat: '4. ÉTNICOS Y TRIBALES', range: 'Págs. 26 - 33' },
-                { cat: '5. ESPIRITUALES', range: 'Págs. 34 - 41' },
-                { cat: '6. NATURALEZA Y FLORES', range: 'Págs. 42 - 49' },
-                { cat: '7. ARMONÍA Y RELAJACIÓN', range: 'Págs. 50 - 57' },
-                { cat: '8. MEDITACIÓN PROFUNDA', range: 'Págs. 58 - 65' },
-                { cat: '9. CRISTALES Y FORMAS', range: 'Págs. 66 - 73' },
-                { cat: '10. ZODÍACO Y SIMBOLOS', range: 'Págs. 74 - 81' },
+                { cat: '1. FLORAL MANDALAS', range: 'Pages 2 - 9' },
+                { cat: '2. GEOMETRIC PATTERNS', range: 'Pages 10 - 17' },
+                { cat: '3. SUN & STARS', range: 'Pages 18 - 25' },
+                { cat: '4. TRIBAL & ETHNIC', range: 'Pages 26 - 33' },
+                { cat: '5. SPIRITUAL DESIGNS', range: 'Pages 34 - 41' },
+                { cat: '6. NATURE & FLOWERS', range: 'Pages 42 - 49' },
+                { cat: '7. HARMONY & PEACE', range: 'Pages 50 - 57' },
+                { cat: '8. DEEP MEDITATION', range: 'Pages 58 - 65' },
+                { cat: '9. CRYSTALS & SHAPES', range: 'Pages 66 - 73' },
+                { cat: '10. ZODIAC & SYMBOLS', range: 'Pages 74 - 81' },
               ].map((item, idx) => (
                 <div key={idx} className="flex justify-between items-center border-b-2 border-dotted border-black pb-2">
                   <span className="text-sm font-black uppercase">{item.cat}</span>
@@ -153,12 +153,12 @@ export default function MandalaBook() {
           </div>
 
           <footer className="border-t border-black pt-3 flex justify-between text-xs font-bold uppercase">
-            <span>Colección Mandalas Anti-Estrés • 80 Diseños</span>
-            <span>Página 1</span>
+            <span>Anti-Stress Mandala Collection • 80 Designs</span>
+            <span>Page 1</span>
           </footer>
         </section>
 
-        {/* PÁGINAS DE MANDALAS (1 MANDALA GRANDE POR HOJA A4) */}
+        {/* MANDALA PAGES (1 LARGE MANDALA PER A4 PAGE) */}
         {allMandalas.map((item, idx) => {
           const isLastPage = idx === allMandalas.length - 1;
 
@@ -167,35 +167,35 @@ export default function MandalaBook() {
               key={item.id}
               className={`a4-page ${!isLastPage ? 'page-break' : ''} flex flex-col justify-between p-10 border border-neutral-300 bg-white text-black shadow-2xl print:shadow-none print:border-0 mb-8 print:mb-0`}
             >
-              {/* Encabezado */}
+              {/* Header */}
               <header className="border-b-4 border-black pb-2 flex justify-between items-end">
                 <div>
                   <span className="text-xs font-black uppercase text-neutral-500">
-                    ESTILO: {item.category}
+                    STYLE: {item.category}
                   </span>
                   <h2 className="text-2xl font-black uppercase">{item.title}</h2>
                 </div>
                 <span className="text-2xl">🧘</span>
               </header>
 
-              {/* Mandala Grande Central */}
+              {/* Central Mandala */}
               <div className="flex-grow flex items-center justify-center p-4 my-2">
                 <div className="w-[185mm] h-[185mm]">
                   {item.svg}
                 </div>
               </div>
 
-              {/* Pie de Página */}
+              {/* Footer */}
               <footer className="border-t-2 border-black pt-3 flex justify-between text-xs font-bold uppercase">
-                <span>Mandalas Anti-Estrés</span>
-                <span>Página {item.pageNumber}</span>
+                <span>Anti-Stress Mandala Collection</span>
+                <span>Page {item.pageNumber}</span>
               </footer>
             </section>
           );
         })}
       </main>
 
-      {/* Estilos CSS para A4 */}
+      {/* CSS Styles for A4 */}
       <style jsx global>{`
         @page {
           size: A4 portrait;
