@@ -1,19 +1,15 @@
 import React from 'react';
 
-export const metadata = {
-  title: 'Ebook de Sudokus',
-  description: 'Generador de Sudokus para imprimir en A4',
-};
-
 export default function RootLayout({ children }) {
   return (
-    
-      
-        
-      
-      
+    <html lang="es">
+      <head>
+        <title>Ebook de Sudokus</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+      </head>
+      <body>
         {children}
-      
-    
+      </body>
+    </html>
   );
 }
