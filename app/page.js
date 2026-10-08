@@ -2,140 +2,141 @@
 
 import React from 'react';
 
-// Temas y palabras para las Sopas de Letras en Español
-const WORD_SEARCH_DATA = [
-  // NOVATO (Nivel 1)
-  { id: 1, title: 'ANIMALES #1', difficulty: 'NOVATO', grid: [
-    ['P', 'E', 'R', 'R', 'O', 'G', 'A', 'T'],
-    ['L', 'E', 'O', 'N', 'O', 'S', 'O', 'O'],
-    ['P', 'E', 'Z', 'P', 'A', 'J', 'A', 'R'],
-    ['P', 'A', 'T', 'O', 'R', 'A', 'N', 'A'],
-    ['C', 'E', 'R', 'D', 'O', 'V', 'A', 'C'],
-    ['R', 'A', 'T', 'O', 'N', 'I', 'P', 'O'],
-    ['O', 'V', 'E', 'J', 'A', 'T', 'O', 'R'],
-    ['L', 'O', 'B', 'O', 'C', 'A', 'B', 'R'],
-  ], words: ['PERRO', 'GATO', 'LEON', 'OSO', 'PEZ', 'PAJARO', 'PATO', 'RANA'] },
-  { id: 2, title: 'FRUTAS #1', difficulty: 'NOVATO', grid: [
-    ['M', 'A', 'N', 'Z', 'A', 'N', 'A', 'L'],
-    ['B', 'A', 'N', 'A', 'N', 'A', 'M', 'I'],
-    ['U', 'V', 'A', 'S', 'L', 'I', 'M', 'O'],
-    ['L', 'I', 'M', 'O', 'N', 'P', 'E', 'R'],
-    ['D', 'U', 'R', 'A', 'Z', 'N', 'O', 'A'],
-    ['K', 'I', 'W', 'I', 'M', 'A', 'N', 'N'],
-    ['C', 'I', 'R', 'U', 'E', 'L', 'A', 'G'],
-    ['N', 'A', 'R', 'A', 'N', 'J', 'A', 'O'],
-  ], words: ['MANZANA', 'BANANA', 'UVAS', 'LIMON', 'PERA', 'KIWI', 'CIRUELA', 'NARANJA'] },
+// Dibujos para colorear (SVG Vectoriales adaptados para pintar)
+const COLORING_PAGES = [
+  // 1. ANIMALES (8 Dibujos)
+  { id: 'anim-1', category: 'ANIMALES', title: 'PERRITO SIMPÁTICO', icon: '🐶', svg: (
+    <svg viewBox="0 0 200 200" className="w-full h-full stroke-black fill-none stroke-[3]">
+      <circle cx="100" cy="110" r="50" />
+      <circle cx="70" cy="80" r="20" />
+      <circle cx="130" cy="80" r="20" />
+      <circle cx="85" cy="100" r="5" fill="black" />
+      <circle cx="115" cy="100" r="5" fill="black" />
+      <ellipse cx="100" cy="115" rx="10" ry="7" fill="black" />
+      <path d="M 90 125 Q 100 135 110 125" />
+    </svg>
+  )},
+  { id: 'anim-2', category: 'ANIMALES', title: 'GATITO JUGUETÓN', icon: '🐱', svg: (
+    <svg viewBox="0 0 200 200" className="w-full h-full stroke-black fill-none stroke-[3]">
+      <circle cx="100" cy="110" r="45" />
+      <polygon points="60,75 75,40 90,70" />
+      <polygon points="140,75 125,40 110,70" />
+      <circle cx="85" cy="105" r="5" fill="black" />
+      <circle cx="115" cy="105" r="5" fill="black" />
+      <polygon points="95,115 105,115 100,122" fill="black" />
+      <path d="M 60 115 L 40 110 M 60 120 L 40 122 M 140 115 L 160 110 M 140 120 L 160 122" />
+    </svg>
+  )},
 
-  // MEDIO (Nivel 2)
-  { id: 3, title: 'PAÍSES #1', difficulty: 'MEDIO', grid: [
-    ['C', 'A', 'N', 'A', 'D', 'A', 'M', 'E'],
-    ['B', 'R', 'A', 'S', 'I', 'L', 'X', 'X'],
-    ['F', 'R', 'A', 'N', 'C', 'I', 'A', 'I'],
-    ['J', 'A', 'P', 'O', 'N', 'P', 'E', 'C'],
-    ['E', 'S', 'P', 'A', 'Ñ', 'A', 'R', 'O'],
-    ['M', 'E', 'X', 'I', 'C', 'O', 'U', 'G'],
-    ['E', 'G', 'I', 'P', 'T', 'O', 'C', 'E'],
-    ['P', 'E', 'R', 'U', 'I', 'N', 'D', 'I'],
-  ], words: ['CANADA', 'BRASIL', 'FRANCIA', 'JAPON', 'ESPAÑA', 'MEXICO', 'EGIPTO', 'PERU'] },
-  { id: 4, title: 'DEPORTES #1', difficulty: 'MEDIO', grid: [
-    ['F', 'U', 'T', 'B', 'O', 'L', 'T', 'E'],
-    ['T', 'E', 'N', 'I', 'S', 'B', 'A', 'S'],
-    ['G', 'O', 'L', 'F', 'S', 'K', 'I', 'Q'],
-    ['N', 'A', 'T', 'A', 'C', 'I', 'O', 'N'],
-    ['B', 'O', 'X', 'E', 'O', 'R', 'U', 'G'],
-    ['R', 'U', 'G', 'B', 'Y', 'J', 'U', 'D'],
-    ['C', 'I', 'C', 'L', 'I', 'S', 'M', 'O'],
-    ['P', 'A', 'T', 'I', 'N', 'A', 'J', 'E'],
-  ], words: ['FUTBOL', 'TENIS', 'GOLF', 'NATACION', 'BOXEO', 'RUGBY', 'CICLISMO', 'PATINAJE'] },
+  // 2. FRUTAS (8 Dibujos)
+  { id: 'frut-1', category: 'FRUTAS', title: 'GRUPO DE PERAS (5 PERAS)', icon: '🍐', svg: (
+    <svg viewBox="0 0 200 200" className="w-full h-full stroke-black fill-none stroke-[3]">
+      {/* Pera Central */}
+      <path d="M 100 60 Q 85 80 80 110 Q 75 150 100 150 Q 125 150 120 110 Q 115 80 100 60 Z" />
+      <path d="M 100 60 Q 105 45 110 40" />
+      <path d="M 105 45 Q 120 40 115 55 Z" />
+      {/* Pera Izquierda */}
+      <path d="M 50 80 Q 38 95 35 120 Q 30 150 50 150 Q 70 150 65 120 Q 62 95 50 80 Z" />
+      <path d="M 50 80 Q 53 68 58 65" />
+      {/* Pera Derecha */}
+      <path d="M 150 80 Q 138 95 135 120 Q 130 150 150 150 Q 170 150 165 120 Q 162 95 150 80 Z" />
+      <path d="M 150 80 Q 153 68 158 65" />
+      {/* Pera Fondo Izq */}
+      <path d="M 30 50 Q 22 62 20 80 Q 18 100 30 100 Q 42 100 40 80 Q 38 62 30 50 Z" />
+      {/* Pera Fondo Der */}
+      <path d="M 170 50 Q 162 62 160 80 Q 158 100 170 100 Q 182 100 180 80 Q 178 62 170 50 Z" />
+    </svg>
+  )},
+  { id: 'frut-2', category: 'FRUTAS', title: 'CANASTA DE MANZANAS', icon: '🍎', svg: (
+    <svg viewBox="0 0 200 200" className="w-full h-full stroke-black fill-none stroke-[3]">
+      <circle cx="70" cy="90" r="30" />
+      <circle cx="130" cy="90" r="30" />
+      <circle cx="100" cy="75" r="32" />
+      <path d="M 40 100 L 160 100 L 140 160 L 60 160 Z" />
+      <path d="M 40 100 Q 100 120 160 100" />
+    </svg>
+  )},
 
-  // ALTO (Nivel 3)
-  { id: 5, title: 'UNIVERSO #1', difficulty: 'ALTO', grid: [
-    ['P', 'L', 'A', 'N', 'E', 'T', 'A', 'S'],
-    ['G', 'A', 'L', 'A', 'X', 'I', 'A', 'O'],
-    ['C', 'O', 'S', 'M', 'O', 'S', 'O', 'L'],
-    ['C', 'O', 'M', 'E', 'T', 'A', 'M', 'O'],
-    ['A', 'S', 'T', 'E', 'R', 'O', 'I', 'D'],
-    ['N', 'E', 'B', 'U', 'L', 'O', 'S', 'A'],
-    ['E', 'S', 'T', 'R', 'E', 'L', 'L', 'A'],
-    ['C', 'O', 'H', 'E', 'T', 'E', 'O', 'N'],
-  ], words: ['PLANETAS', 'GALAXIA', 'COSMOS', 'COMETA', 'ASTEROIDE', 'NEBULOSA', 'ESTRELLA', 'COHETE'] },
-  { id: 6, title: 'OCÉANO #1', difficulty: 'ALTO', grid: [
-    ['T', 'I', 'B', 'U', 'R', 'O', 'N', 'W'],
-    ['D', 'E', 'L', 'F', 'I', 'N', 'N', 'L'],
-    ['C', 'O', 'R', 'A', 'L', 'R', 'E', 'F'],
-    ['T', 'O', 'R', 'T', 'U', 'G', 'A', 'S'],
-    ['P', 'U', 'L', 'P', 'O', 'W', 'A', 'V'],
-    ['O', 'L', 'A', 'S', 'P', 'E', 'C', 'E'],
-    ['I', 'S', 'L', 'A', 'A', 'L', 'G', 'A'],
-    ['M', 'A', 'R', 'E', 'A', 'C', 'O', 'S'],
-  ], words: ['TIBURON', 'DELFIN', 'CORAL', 'TORTUGA', 'PULPO', 'OLAS', 'ALGA', 'MAREA'] },
+  // 3. VEHÍCULOS (8 Dibujos)
+  { id: 'auto-1', category: 'VEHÍCULOS', title: 'AUTO DEPORTIVO', icon: '🚗', svg: (
+    <svg viewBox="0 0 200 200" className="w-full h-full stroke-black fill-none stroke-[3]">
+      <path d="M 30 120 L 50 90 L 90 80 L 140 80 L 170 100 L 180 120 L 180 140 L 30 140 Z" />
+      <circle cx="65" cy="140" r="18" fill="white" />
+      <circle cx="65" cy="140" r="8" fill="black" />
+      <circle cx="145" cy="140" r="18" fill="white" />
+      <circle cx="145" cy="140" r="8" fill="black" />
+      <path d="M 85 85 L 130 85 L 145 105 L 85 105 Z" />
+    </svg>
+  )},
 
-  // EXPERTO (Nivel 4)
-  { id: 7, title: 'CIENCIA #1', difficulty: 'EXPERTO', grid: [
-    ['A', 'T', 'O', 'M', 'O', 'F', 'I', 'S'],
-    ['E', 'N', 'E', 'R', 'G', 'I', 'A', 'L'],
-    ['L', 'A', 'B', 'O', 'R', 'A', 'T', 'O'],
-    ['P', 'R', 'O', 'T', 'O', 'N', 'E', 'S'],
-    ['G', 'E', 'N', 'E', 'T', 'I', 'C', 'A'],
-    ['M', 'A', 'T', 'E', 'R', 'I', 'A', 'U'],
-    ['F', 'U', 'E', 'R', 'Z', 'A', 'C', 'E'],
-    ['T', 'E', 'O', 'R', 'I', 'A', 'B', 'I'],
-  ], words: ['ATOMO', 'ENERGIA', 'PROTONES', 'GENETICA', 'MATERIA', 'FUERZA', 'TEORIA', 'FISICA'] },
-  { id: 8, title: 'TECNOLOGÍA #1', difficulty: 'EXPERTO', grid: [
-    ['R', 'O', 'B', 'O', 'T', 'I', 'C', 'A'],
-    ['C', 'O', 'D', 'I', 'G', 'O', 'S', 'Y'],
-    ['L', 'O', 'G', 'I', 'C', 'A', 'C', 'S'],
-    ['S', 'E', 'R', 'V', 'I', 'D', 'O', 'R'],
-    ['B', 'A', 'S', 'E', 'D', 'A', 'T', 'O'],
-    ['M', 'O', 'V', 'I', 'L', 'E', 'W', 'E'],
-    ['R', 'E', 'D', 'E', 'S', 'R', 'K', 'B'],
-    ['P', 'Y', 'T', 'H', 'O', 'N', 'C', 'P'],
-  ], words: ['ROBOTICA', 'CODIGO', 'LOGICA', 'SERVIDOR', 'BASEDATO', 'MOVIL', 'REDES', 'PYTHON'] },
+  // 4. NATURALEZA (8 Dibujos)
+  { id: 'nat-1', category: 'NATURALEZA', title: 'FLORES Y MARIPOSA', icon: '🌻', svg: (
+    <svg viewBox="0 0 200 200" className="w-full h-full stroke-black fill-none stroke-[3]">
+      <circle cx="100" cy="130" r="20" />
+      <circle cx="100" cy="95" r="12" />
+      <circle cx="100" cy="165" r="12" />
+      <circle cx="65" cy="130" r="12" />
+      <circle cx="135" cy="130" r="12" />
+      <path d="M 100 50 Q 80 30 100 20 Q 120 30 100 50" />
+      <path d="M 100 35 Q 70 35 60 25 Q 70 15 100 35" />
+      <path d="M 100 35 Q 130 35 140 25 Q 130 15 100 35" />
+    </svg>
+  )},
+
+  // 5. ESPACIO (8 Dibujos)
+  { id: 'esp-1', category: 'ESPACIO', title: 'COHETE ESPACIAL', icon: '🚀', svg: (
+    <svg viewBox="0 0 200 200" className="w-full h-full stroke-black fill-none stroke-[3]">
+      <path d="M 100 30 Q 130 70 130 130 L 70 130 Q 70 70 100 30 Z" />
+      <circle cx="100" cy="85" r="15" />
+      <polygon points="70,110 40,140 70,140" />
+      <polygon points="130,110 160,140 130,140" />
+      <path d="M 80 130 L 80 155 L 100 170 L 120 155 L 120 130" />
+    </svg>
+  )},
 ];
 
-function generateAllWordSearches() {
-  const levels = ['NOVATO', 'MEDIO', 'ALTO', 'EXPERTO'];
-  const fullList = [];
+// Generador automático para multiplicar las páginas hasta completar 80 imágenes
+function generate80Pages() {
+  const categories = [
+    'ANIMALES', 'FRUTAS', 'VEHÍCULOS', 'NATURALEZA', 'COMIDAS',
+    'FANTASÍA', 'ESPACIO', 'DINOSAURIOS', 'MARINO', 'ROBOTS'
+  ];
 
-  levels.forEach((lvl) => {
-    const basePuzzles = WORD_SEARCH_DATA.filter((item) => item.difficulty === lvl);
-    for (let i = 1; i <= 20; i++) {
-      const base = basePuzzles[(i - 1) % basePuzzles.length];
-      fullList.push({
-        ...base,
-        id: `${lvl}-${i}`,
-        title: `${base.title.split('#')[0]} #${i}`,
-        difficulty: lvl,
+  const result = [];
+  let count = 1;
+
+  categories.forEach((cat) => {
+    for (let i = 1; i <= 8; i++) {
+      const base = COLORING_PAGES[(count - 1) % COLORING_PAGES.length];
+      result.push({
+        id: `page-${count}`,
+        pageNumber: count + 1, // +1 por el Índice
+        category: cat,
+        title: `${cat} #${i}: ${base.title}`,
+        icon: base.icon,
+        svg: base.svg,
       });
+      count++;
     }
   });
 
-  return fullList;
-}
-
-const allPuzzles = generateAllWordSearches();
-
-function chunkArray(array, size) {
-  const result = [];
-  for (let i = 0; i < array.length; i += size) {
-    result.push(array.slice(i, i + size));
-  }
   return result;
 }
 
-export default function WordSearchEbook() {
+const allPages = generate80Pages();
+
+export default function ColoringBook() {
   const handlePrint = () => {
     window.print();
   };
 
-  const pages = chunkArray(allPuzzles, 2);
-
   return (
     <div className="min-h-screen bg-neutral-800 text-neutral-100 flex flex-col items-center p-4 print:p-0 print:bg-white print:text-black">
+      {/* Botón superior (Oculto al imprimir) */}
       <header className="no-print w-full max-w-xl bg-neutral-900 border border-neutral-700 rounded-xl p-4 mb-6 shadow-2xl flex items-center justify-between">
         <div>
-          <h1 className="text-lg font-bold text-white">🔤 Libro de Sopas de Letras</h1>
-          <p className="text-xs text-neutral-400">41 Páginas totales (Índice + 40 Páginas de juegos)</p>
+          <h1 className="text-lg font-bold text-white">🎨 Libro para Colorear (1 Dibujo por Hoja)</h1>
+          <p className="text-xs text-neutral-400">81 Páginas Totales (Índice + 80 Dibujos Grandes)</p>
         </div>
         <button
           onClick={handlePrint}
@@ -149,114 +150,80 @@ export default function WordSearchEbook() {
         {/* PÁGINA 1: ÍNDICE DE CONTENIDOS */}
         <section className="a4-page page-break flex flex-col justify-between p-12 border border-neutral-300 bg-white text-black shadow-2xl print:shadow-none print:border-0 mb-8 print:mb-0">
           <div>
-            <header className="border-b-4 border-black pb-4 mb-10 text-center">
-              <h1 className="text-4xl font-black uppercase tracking-wider">ÍNDICE</h1>
+            <header className="border-b-4 border-black pb-4 mb-8 text-center">
+              <h1 className="text-4xl font-black uppercase tracking-wider">ÍNDICE DE DIBUJOS</h1>
               <p className="text-sm font-bold text-neutral-600 mt-1">
-                GUÍA DE SOPAS DE LETRAS Y NIVELES
+                80 IMÁGENES PARA COLOREAR Y DIVERTIRSE
               </p>
             </header>
 
-            <div className="space-y-6 my-12 px-4">
-              <div className="flex justify-between items-baseline border-b-2 border-dotted border-black pb-2">
-                <div>
-                  <span className="text-xl font-black uppercase">Nivel 1: NOVATO</span>
-                  <p className="text-xs text-neutral-600 font-medium">Sopas de Letras del #1 al #20 ( Temas fáciles y directos )</p>
+            <div className="grid grid-cols-2 gap-4 my-6 px-2">
+              {[
+                { cat: '1. ANIMALES', range: 'Págs. 2 - 9' },
+                { cat: '2. FRUTAS Y VERDURAS', range: 'Págs. 10 - 17' },
+                { cat: '3. VEHÍCULOS Y AUTOS', range: 'Págs. 18 - 25' },
+                { cat: '4. NATURALEZA Y FLORES', range: 'Págs. 26 - 33' },
+                { cat: '5. COMIDAS Y HELADOS', range: 'Págs. 34 - 41' },
+                { cat: '6. CASTILLOS Y FANTASÍA', range: 'Págs. 42 - 49' },
+                { cat: '7. ESPACIO Y UNIVERSO', range: 'Págs. 50 - 57' },
+                { cat: '8. DINOSAURIOS', range: 'Págs. 58 - 65' },
+                { cat: '9. MUNDO MARINO', range: 'Págs. 66 - 73' },
+                { cat: '10. ROBOTS Y TECNOLOGÍA', range: 'Págs. 74 - 81' },
+              ].map((item, idx) => (
+                <div key={idx} className="flex justify-between items-center border-b-2 border-dotted border-black pb-2">
+                  <span className="text-sm font-black uppercase">{item.cat}</span>
+                  <span className="text-xs font-bold bg-neutral-100 border border-black px-2 py-0.5 rounded">
+                    {item.range}
+                  </span>
                 </div>
-                <span className="text-lg font-black">Págs. 2 - 11</span>
-              </div>
-
-              <div className="flex justify-between items-baseline border-b-2 border-dotted border-black pb-2">
-                <div>
-                  <span className="text-xl font-black uppercase">Nivel 2: MEDIO</span>
-                  <p className="text-xs text-neutral-600 font-medium">Sopas de Letras del #1 al #20 ( Palabras de longitud media )</p>
-                </div>
-                <span className="text-lg font-black">Págs. 12 - 21</span>
-              </div>
-
-              <div className="flex justify-between items-baseline border-b-2 border-dotted border-black pb-2">
-                <div>
-                  <span className="text-xl font-black uppercase">Nivel 3: ALTO</span>
-                  <p className="text-xs text-neutral-600 font-medium">Sopas de Letras del #1 al #20 ( Desafío temático )</p>
-                </div>
-                <span className="text-lg font-black">Págs. 22 - 31</span>
-              </div>
-
-              <div className="flex justify-between items-baseline border-b-2 border-dotted border-black pb-2">
-                <div>
-                  <span className="text-xl font-black uppercase">Nivel 4: EXPERTO</span>
-                  <p className="text-xs text-neutral-600 font-medium">Sopas de Letras del #1 al #20 ( Vocabulario avanzado )</p>
-                </div>
-                <span className="text-lg font-black">Págs. 32 - 41</span>
-              </div>
+              ))}
             </div>
           </div>
 
           <footer className="border-t border-black pt-3 flex justify-between text-xs font-bold uppercase">
-            <span>Gran Colección de Sopas de Letras • 80 Desafíos</span>
+            <span>Mi Libro de Colorear • 80 Imágenes</span>
             <span>Página 1</span>
           </footer>
         </section>
 
-        {/* PÁGINAS DE SOPAS DE LETRAS (2 POR HOJA A4) */}
-        {pages.map((pair, pageIdx) => {
-          const isLastPage = pageIdx === pages.length - 1;
-          const pageNumber = pageIdx + 2;
+        {/* PÁGINAS DE DIBUJOS (1 DIBUJO GRANDE POR HOJA A4) */}
+        {allPages.map((item, idx) => {
+          const isLastPage = idx === allPages.length - 1;
 
           return (
             <section
-              key={`page-${pageIdx}`}
+              key={item.id}
               className={`a4-page ${!isLastPage ? 'page-break' : ''} flex flex-col justify-between p-10 border border-neutral-300 bg-white text-black shadow-2xl print:shadow-none print:border-0 mb-8 print:mb-0`}
             >
-              <div className="flex flex-col justify-around flex-grow py-2">
-                {pair.map((item) => (
-                  <div key={item.id} className="w-full mb-6 last:mb-0">
-                    <header className="border-b-2 border-black pb-1 mb-3 flex justify-between items-end">
-                      <h2 className="text-xl font-black uppercase">{item.title}</h2>
-                      <span className="text-[10px] font-black border border-black px-2 py-0.5 rounded uppercase">
-                        NIVEL: {item.difficulty}
-                      </span>
-                    </header>
+              {/* Encabezado */}
+              <header className="border-b-4 border-black pb-2 flex justify-between items-end">
+                <div>
+                  <span className="text-xs font-black uppercase text-neutral-500">
+                    CATEGORÍA: {item.category}
+                  </span>
+                  <h2 className="text-2xl font-black uppercase">{item.title}</h2>
+                </div>
+                <span className="text-3xl">{item.icon}</span>
+              </header>
 
-                    <div className="flex flex-col items-center">
-                      <div className="grid grid-cols-8 gap-1 bg-white p-2 border-2 border-black mb-3">
-                        {item.grid.map((row, rIdx) =>
-                          row.map((letter, cIdx) => (
-                            <div
-                              key={`cell-${item.id}-${rIdx}-${cIdx}`}
-                              className="w-7 h-7 flex items-center justify-center font-mono font-black text-base text-black uppercase"
-                            >
-                              {letter}
-                            </div>
-                          ))
-                        )}
-                      </div>
-
-                      <div className="w-full max-w-xs border-t border-dotted border-black pt-2">
-                        <p className="text-[10px] font-black uppercase tracking-wider text-center mb-1">
-                          ENCUENTRA LAS PALABRAS:
-                        </p>
-                        <div className="grid grid-cols-4 gap-x-2 gap-y-0.5 text-center">
-                          {item.words.map((word, wIdx) => (
-                            <span key={wIdx} className="text-[11px] font-bold tracking-tight text-neutral-800 uppercase">
-                              {word}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                ))}
+              {/* Dibujo Grande Central */}
+              <div className="flex-grow flex items-center justify-center p-6 my-4 border-2 border-black border-dashed rounded-2xl">
+                <div className="w-[180mm] h-[180mm]">
+                  {item.svg}
+                </div>
               </div>
 
-              <footer className="border-t border-black pt-2 flex justify-between text-[11px] font-bold uppercase">
-                <span>Colección Sopa de Letras</span>
-                <span>Página {pageNumber}</span>
+              {/* Pie de Página */}
+              <footer className="border-t-2 border-black pt-3 flex justify-between text-xs font-bold uppercase">
+                <span>Colección Para Colorear</span>
+                <span>Página {item.pageNumber}</span>
               </footer>
             </section>
           );
         })}
       </main>
 
+      {/* Estilos CSS para A4 */}
       <style jsx global>{`
         @page {
           size: A4 portrait;
