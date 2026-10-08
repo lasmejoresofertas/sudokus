@@ -20,7 +20,7 @@ const WORD_SEARCH_DATA = [
     ['B', 'A', 'N', 'A', 'N', 'A', 'M', 'E'],
     ['G', 'R', 'A', 'P', 'E', 'L', 'O', 'N'],
     ['L', 'E', 'M', 'O', 'N', 'P', 'E', 'A'],
-    ['P me', 'E', 'A', 'C', 'H', 'L', 'U', 'M'],
+    ['P', 'E', 'A', 'C', 'H', 'L', 'U', 'M'],
     ['K', 'I', 'W', 'I', 'M', 'A', 'N', 'G'],
     ['P', 'L', 'U', 'M', 'B', 'E', 'R', 'R'],
     ['O', 'R', 'A', 'N', 'G', 'E', 'Y', 'S'],
@@ -40,12 +40,12 @@ const WORD_SEARCH_DATA = [
   { id: 4, title: 'SPORTS #1', difficulty: 'MEDIUM', grid: [
     ['S', 'O', 'C', 'C', 'E', 'R', 'T', 'E'],
     ['T', 'E', 'N', 'N', 'I', 'S', 'B', 'A'],
-    ['G', 'O', 'L', 'F', 'S', me', 'K', 'I'],
+    ['G', 'O', 'L', 'F', 'S', 'K', 'I', 'I'],
     ['S', 'W', 'I', 'M', 'M', 'I', 'N', 'G'],
-    ['B', 'O me', 'X', 'I', 'N', 'G', 'R', 'U'],
+    ['B', 'O', 'X', 'I', 'N', 'G', 'R', 'U'],
     ['R', 'U', 'G', 'B', 'Y', 'J', 'U', 'D'],
     ['C', 'Y', 'C', 'L', 'I', 'N', 'G', 'O'],
-    ['S', 'K me', 'A', 'T', 'I', 'N', 'G', 'X'],
+    ['S', 'K', 'A', 'T', 'I', 'N', 'G', 'X'],
   ], words: ['SOCCER', 'TENNIS', 'GOLF', 'SWIMMING', 'BOXING', 'RUGBY', 'CYCLING', 'SKATING'] },
 
   // HARD (Nivel 3)
@@ -54,10 +54,10 @@ const WORD_SEARCH_DATA = [
     ['G', 'A', 'L', 'A', 'X', 'Y', 'C', 'O'],
     ['C', 'O', 'S', 'M', 'O', 'S', 'O', 'R'],
     ['R', 'O', 'C', 'K', 'E', 'T', 'M', 'B'],
-    ['A', 'S', 'T me', 'E', 'R', 'O', 'I', 'D'],
+    ['A', 'S', 'T', 'E', 'R', 'O', 'I', 'D'],
     ['N', 'E', 'B', 'U', 'L', 'A', 'T', 'O'],
     ['S', 'T', 'A', 'R', 'S', 'U', 'N', 'S'],
-    ['C me', 'O', 'M', 'E', 'T', 'M', 'O', 'O'],
+    ['C', 'O', 'M', 'E', 'T', 'M', 'O', 'O'],
   ], words: ['PLANETS', 'GALAXY', 'COSMOS', 'ROCKET', 'ASTEROID', 'NEBULA', 'STARS', 'COMET'] },
   { id: 6, title: 'OCEAN #1', difficulty: 'HARD', grid: [
     ['S', 'H', 'A', 'R', 'K', 'W', 'H', 'A'],
@@ -75,17 +75,17 @@ const WORD_SEARCH_DATA = [
     ['A', 'T', 'O', 'M', 'P', 'H', 'Y', 'S'],
     ['E', 'N', 'E', 'R', 'G', 'Y', 'L', 'I'],
     ['L', 'A', 'B', 'O', 'R', 'A', 'T', 'O'],
-    ['P', 'R me', 'O', 'T', 'O', 'N', 'S', 'P'],
-    ['G', 'E me', me', 'E', 'T me', 'I', 'C', 'S'],
+    ['P', 'R', 'O', 'T', 'O', 'N', 'S', 'P'],
+    ['G', 'E', 'N', 'E', 'T', 'I', 'C', 'S'],
     ['M', 'A', 'T', 'T', 'E', 'R', 'Q', 'U'],
     ['F', 'O', 'R', 'C', 'E', 'C', 'E', 'L'],
     ['T', 'H', 'E', 'O', 'R', 'Y', 'B', 'I'],
   ], words: ['ATOM', 'ENERGY', 'PROTONS', 'GENETICS', 'MATTER', 'FORCE', 'THEORY', 'PHYSICS'] },
   { id: 8, title: 'TECHNOLOGY #1', difficulty: 'EXPERT', grid: [
     ['R', 'O', 'B', 'O', 'T', 'I', 'C', 'S'],
-    ['C', 'O me', 'D', 'I', 'N', 'G', 'S', 'Y'],
+    ['C', 'O', 'D', 'I', 'N', 'G', 'S', 'Y'],
     ['A', 'I', 'L', 'O', 'G', 'I', 'C', 'S'],
-    ['S me', 'E', 'R', 'V', 'E', 'R', 'S', 'T'],
+    ['S', 'E', 'R', 'V', 'E', 'R', 'S', 'T'],
     ['D', 'A', 'T', 'A', 'B', 'A', 'S', 'E'],
     ['M', 'O', 'B', 'I', 'L', 'E', 'W', 'E'],
     ['N', 'E', 'T', 'W', 'O', 'R', 'K', 'B'],
@@ -93,7 +93,6 @@ const WORD_SEARCH_DATA = [
   ], words: ['ROBOTICS', 'CODING', 'SERVERS', 'DATABASE', 'MOBILE', 'NETWORK', 'PYTHON', 'LOGIC'] },
 ];
 
-// Generador automático para multiplicar las sopas de letras hasta completar 80
 function generateAllWordSearches() {
   const levels = ['BEGINNER', 'MEDIUM', 'HARD', 'EXPERT'];
   const fullList = [];
@@ -116,7 +115,6 @@ function generateAllWordSearches() {
 
 const allPuzzles = generateAllWordSearches();
 
-// Agrupar de a 2 por carilla A4
 function chunkArray(array, size) {
   const result = [];
   for (let i = 0; i < array.length; i += size) {
@@ -134,7 +132,6 @@ export default function WordSearchEbook() {
 
   return (
     <div className="min-h-screen bg-neutral-800 text-neutral-100 flex flex-col items-center p-4 print:p-0 print:bg-white print:text-black">
-      {/* Botón superior (Oculto al imprimir) */}
       <header className="no-print w-full max-w-xl bg-neutral-900 border border-neutral-700 rounded-xl p-4 mb-6 shadow-2xl flex items-center justify-between">
         <div>
           <h1 className="text-lg font-bold text-white">🔤 Word Search Book (English Edition)</h1>
@@ -200,7 +197,7 @@ export default function WordSearchEbook() {
           </footer>
         </section>
 
-        {/* PÁGINAS DE SOPAS DE LETRAS (2 POR HOJA A4) */}
+        {/* PÁGINAS DE SOPAS DE LETRAS */}
         {pages.map((pair, pageIdx) => {
           const isLastPage = pageIdx === pages.length - 1;
           const pageNumber = pageIdx + 2;
@@ -220,9 +217,7 @@ export default function WordSearchEbook() {
                       </span>
                     </header>
 
-                    {/* Grilla de letras y palabras a buscar */}
                     <div className="flex flex-col items-center">
-                      {/* Grilla cuadrada */}
                       <div className="grid grid-cols-8 gap-1 bg-white p-2 border-2 border-black mb-3">
                         {item.grid.map((row, rIdx) =>
                           row.map((letter, cIdx) => (
@@ -236,7 +231,6 @@ export default function WordSearchEbook() {
                         )}
                       </div>
 
-                      {/* Lista de Palabras en columnas */}
                       <div className="w-full max-w-xs border-t border-dotted border-black pt-2">
                         <p className="text-[10px] font-black uppercase tracking-wider text-center mb-1">
                           FIND THE WORDS:
@@ -263,7 +257,6 @@ export default function WordSearchEbook() {
         })}
       </main>
 
-      {/* Estilos CSS para A4 */}
       <style jsx global>{`
         @page {
           size: A4 portrait;
